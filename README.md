@@ -38,24 +38,30 @@
 - 간략한 명령어 https://www.julia-vscode.org/docs/stable/userguide/runningcode/
   - 코드 셀 구분은 `##`
   - CTRL + ENTER 해당 라인 실행 
-  - ALT + ENTER 코드 블럭럭 실행 (드래그앤드롭 선택) 
+  - ALT + ENTER 코드 블럭 실행 (드래그앤드롭 선택) 
   - SHIFT + ENTER 코드 셀 실행
 
 - 패키지 설치는 두가지로 가능하다. 
-  
+
+  1. Julia 콘솔에서 `]`를 치면 패키지 관리 모드로 들어간다.   
+
   ```julia
-  ] add Plot
+  >(pkg) add SOMETHING
   ```
     
-    - 이렇게 설치할 경우는 별도로 `Pkg`를 호출하지 않도 설치가 가능하다. 다만 연속된 설치를 지원하지는 않는다. 
+  - 이렇게 설치할 경우는 별도로 `Pkg`를 호출하지 않도 설치가 가능하다. 다만 연속된 설치를 지원하지는 않는다. 
 
+  2. 아래와 같이 설치할 수도 있다.
+  
     ```julia
     using Pkg 
     Pkg.add("Plots")
     Pkg.add("PyPlot") 
     ```
 
-    - 이렇게 쓰는 것은 가능하다. 
+- Julia는 JIT를 쓰기 때문에 패키지를 설치하고 명령을 구동하는 데 시간이 오래 걸린다. 이 과정을 작업을 시작하기 전에 미래 해두는 것이 좋다. 즉, 필요한 경우 미리 컴파일을 해놓는 것이 좋다. 
+- QuantEcon의 [아래의 예](https://julia.quantecon.org/getting_started_julia/julia_by_example.html)를 따르자. 
+
 
 ## For Python 
 
@@ -93,6 +99,13 @@ pip install -U radian
         - `R › Rterm: Linux`
           - `/opt/conda/bin/radian`
         - `R: Session Watcher` 항목 체크 
+
+## Jupyterlab 
+
+- `ipynb`를 확장자로 해서 노트북을 쓰고 싶다면, 그냥 쓰면 된다. 
+
+1. 콘테이너를 부착한 후 
+2. 커널을 선택한다. 
 
 
 
